@@ -125,6 +125,9 @@ startTimer();
 }
 
 // ================= SUBMIT =================
+if(document.fullscreenElement){
+   document.exitFullscreen();
+}
 function submitTest(){
 clearInterval(timer);
 
@@ -173,9 +176,15 @@ document.getElementById("analysis").innerHTML = html;
 
 // ================= EXIT =================
 function exitTest(){
-if(confirm("Exit test?")){
-location.reload();
+
+if(document.fullscreenElement){
+   document.exitFullscreen();
 }
+
+if(confirm("Exit test?")){
+   location.reload();
+}
+
 }
 
 // ================= PDF =================
