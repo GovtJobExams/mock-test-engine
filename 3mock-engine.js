@@ -24,30 +24,22 @@ userAns = new Array(questions.length).fill(null);
 
 // ================= START TEST =================
 function startTest(){
-function startTest(){
 
-const elem = document.documentElement;
+  const elem = document.documentElement;
 
-if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-} else if (elem.webkitRequestFullscreen) {
-    elem.webkitRequestFullscreen();
-} else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen();
-}
+  if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+  }
 
-document.getElementById("startBox").classList.add("hide");
-document.getElementById("testBox").classList.remove("hide");
+  document.getElementById("startBox").classList.add("hide");
+  document.getElementById("testBox").classList.remove("hide");
 
-loadQ();
-startTimer();
-}
-
-document.getElementById("startBox").classList.add("hide");
-document.getElementById("testBox").classList.remove("hide");
-
-loadQ();
-startTimer();
+  loadQ();
+  startTimer();
 }
 
 // ================= LOAD QUESTION =================
@@ -125,11 +117,13 @@ startTimer();
 }
 
 // ================= SUBMIT =================
-if(document.fullscreenElement){
-   document.exitFullscreen();
-}
 function submitTest(){
-clearInterval(timer);
+
+  if(document.fullscreenElement){
+      document.exitFullscreen();
+  }
+
+  clearInterval(timer);
 
 let correct=0, wrong=0, not=0;
 
@@ -177,13 +171,13 @@ document.getElementById("analysis").innerHTML = html;
 // ================= EXIT =================
 function exitTest(){
 
-if(document.fullscreenElement){
-   document.exitFullscreen();
-}
+  if(document.fullscreenElement){
+      document.exitFullscreen();
+  }
 
-if(confirm("Exit test?")){
-   location.reload();
-}
+  if(confirm("Exit test?")){
+      location.reload();
+  }
 
 }
 
