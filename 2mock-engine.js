@@ -7,7 +7,7 @@ let timeLeft = 30;
 
 // questions from CDN file
 // expected format: window.questions OR global variable
-let questions = window.questions || indusValleyQuestions || [];
+let questions = window.questions || [];
 
 // fallback safety
 if(!questions.length){
