@@ -44,7 +44,7 @@ function loadQ(){
 let q = questions[current];
 
 document.getElementById("question").innerText =
-(current+1)+". "+q.q;
+(current+1)+". "+q.question;
 
 let html="";
 
